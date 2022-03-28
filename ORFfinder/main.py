@@ -1,6 +1,5 @@
 import sys
 
-
 standard_starts = ["ATG", "CTG", "TTG"]
 standard_stops = ["TAA", "TAG", "TGA"]
 
@@ -44,6 +43,7 @@ mitochondrial_transl_table = {
     'TAC': 'Y', 'TAT': 'Y', 'TAA': '*', 'TAG': '*',
     'TGC': 'C', 'TGT': 'C', 'TGA': 'W', 'TGG': 'W',
 }
+
 
 def find_stop_codon(sequence, stops):
     for i in range(0, len(sequence), 3):
@@ -101,6 +101,10 @@ def write_to_fasta(file, nucl_seq, prot_seq, num):
 def main():
     # command line: python main.py name_of_input_fasta_file genome_type
     # Genome_type: standard or mitochondrial
+    
+    # Or use it:
+    #sequence = "ATGCCCTGA"
+    #genome_type = "standard"
 
     filename = sys.argv[1]
     fin = open(filename, 'r')
